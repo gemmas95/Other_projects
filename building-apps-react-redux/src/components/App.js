@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-duplicate-props */
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import HomePage from "./home/HomePage";
@@ -12,9 +11,9 @@ function App() {
     <div className="container-fluid">
       <Header />
       <Switch>
-        <Route exact component path="/" component={HomePage} />
-        <Route component path="/about" component={AboutPage} />
-        <Route component path="/courses" component={CoursesPage} />
+        <Route exact path="/" component={HomePage} />
+        <Route path="/about" component={AboutPage} />
+        <Route path="/courses" component={CoursesPage} />
         <Route component={PageNotFound} />
       </Switch>
     </div>
