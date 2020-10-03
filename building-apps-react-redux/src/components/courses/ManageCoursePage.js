@@ -1,4 +1,3 @@
-// Section 1 - Imports
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { loadCourses, saveCourse } from "../../redux/actions/courseActions";
@@ -7,7 +6,6 @@ import PropTypes from "prop-types";
 import CourseForm from "./CourseForm";
 import { newCourse } from "../../../tools/mockData";
 
-// Section 2 - Component
 function ManageCoursePage({
   courses,
   authors,
@@ -15,7 +13,6 @@ function ManageCoursePage({
   loadCourses,
   saveCourse,
   history,
-  // Aquest rest operator diu que les orpietats no assignades a ninguna de les anteriors les guardi a un objecte que es tigui props
   ...props
 }) {
   const [course, setCourse] = useState({ ...props.course });
@@ -23,7 +20,7 @@ function ManageCoursePage({
 
   useEffect(() => {
     if (courses.length === 0) {
-      loadCourses().catch((error) => {
+      loadCourses().catch(error => {
         alert("Loading courses failed" + error);
       });
     } else {
@@ -31,7 +28,7 @@ function ManageCoursePage({
     }
 
     if (authors.length === 0) {
-      loadAuthors().catch((error) => {
+      loadAuthors().catch(error => {
         alert("Loading authors failed" + error);
       });
     }
@@ -39,20 +36,19 @@ function ManageCoursePage({
 
   function handleChange(event) {
     const { name, value } = event.target;
-    setCourse((prevCourse) => ({
-      // parseInt convert the id in...
-      [name]: name === "authorId" ? parseInt(value, 10) : value,
+    setCourse(prevCourse => ({
+      ...prevCourse,
+      [name]: name === "authorId" ? parseInt(value, 10) : value
     }));
   }
 
   function handleSave(event) {
     event.preventDefault();
     saveCourse(course).then(() => {
-      history.pushState("/courses");
+      history.push("/courses");
     });
   }
 
-  // El [] es exacatemnte lo mismo que hacer un componentDidMount, se renderiza 1 vez
   return (
     <CourseForm
       course={course}
@@ -64,7 +60,6 @@ function ManageCoursePage({
   );
 }
 
-// Section 3 - PropTypes
 ManageCoursePage.propTypes = {
   course: PropTypes.object.isRequired,
   authors: PropTypes.array.isRequired,
@@ -72,14 +67,13 @@ ManageCoursePage.propTypes = {
   loadCourses: PropTypes.func.isRequired,
   loadAuthors: PropTypes.func.isRequired,
   saveCourse: PropTypes.func.isRequired,
-  history: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired
 };
 
 export function getCourseBySlug(courses, slug) {
-  return courses.find((course) => course.slug === slug) || null;
+  return courses.find(course => course.slug === slug) || null;
 }
 
-// Section 4 - Redux mappings (state & actions)
 function mapStateToProps(state, ownProps) {
   const slug = ownProps.match.params.slug;
   const course =
@@ -89,15 +83,17 @@ function mapStateToProps(state, ownProps) {
   return {
     course,
     courses: state.courses,
-    authors: state.authors,
+    authors: state.authors
   };
 }
-// Import map dispacth to porps as a object instead of a function
+
 const mapDispatchToProps = {
   loadCourses,
   loadAuthors,
-  saveCourse,
+  saveCourse
 };
 
-// Section 5 - Redux connect
-export default connect(mapStateToProps, mapDispatchToProps)(ManageCoursePage);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ManageCoursePage);
