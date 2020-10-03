@@ -9,7 +9,6 @@ import { Provider as ReduxProvider } from "react-redux";
 
 const store = configureStore();
 
-// Provider is a high order component, we rename to use here as ReduxProvider
 render(
   <ReduxProvider store={store}>
     <Router>
