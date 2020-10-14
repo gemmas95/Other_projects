@@ -1,16 +1,12 @@
 // Applied reduce in filter example, skylabersList
-const skylabers = [
-  { name: "Gerard", city: "Barcelona" },
-  { name: "Santi", city: "Buenos Aires" },
-  { name: "Gemma", city: "Barcelona" },
-];
 
-const barcelonaSkylabers = skylabers.reduce((acc, currVal) => {
-  if (currVal.city === "Barcelona") {
+const skylabersList = require("./skylaberList.mock");
+
+const sabadellSkylabers = skylabersList.reduce((acc, currVal) => {
+  if (currVal.address.city === "Sabadell") {
     acc = [...acc, currVal];
   }
-  console.log("this is acc", acc);
   return acc;
 }, []);
 
-console.log("final result -----", barcelonaSkylabers);
+console.log("Final Result ==>", sabadellSkylabers);
