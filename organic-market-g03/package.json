@@ -1,0 +1,40 @@
+{
+	"name": "group03",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "set DEBUG=server,server:* & nodemon server.js",
+		"start2": "set DEBUG=server,server:* & nodemon server.js",
+		"lint": "eslint . --fix",
+		"scss": "node-sass --watch public/scss -o public/css"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"bootstrap": "^4.5.2",
+		"chalk": "^4.1.0",
+		"cookie-parser": "^1.4.5",
+		"debug": "^4.1.1",
+		"ejs": "^3.1.5",
+		"express": "^4.17.1",
+		"express-session": "^1.17.1",
+		"jquery": "^3.5.1",
+		"mongodb": "^3.6.0",
+		"morgan": "^1.10.0",
+		"node-sass": "^4.14.1",
+		"nodemon": "^2.0.4",
+		"passport": "^0.4.1",
+		"passport-local": "^1.0.0"
+	},
+	"devDependencies": {
+		"eslint": "^7.7.0",
+		"eslint-config-airbnb-base": "^14.2.0",
+		"eslint-config-prettier": "^6.11.0",
+		"eslint-plugin-import": "^2.22.0",
+		"prettier": "^2.0.5"
+	}
+}

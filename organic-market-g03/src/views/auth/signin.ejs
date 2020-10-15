@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Signin </title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/recipesDetail.css">
+</head>
+
+<body>
+    <%- include('../header')-%>
+    <h2> <a href="/auth/signin">Signin</a> or <a href="/auth/signup">Signup</a> </h2>
+    <form action="" method="POST">
+        <div>
+            <label for="user">
+                User: <input type="text" name="user" required />
+            </label>
+        </div>
+        <div>
+            <label for="password">
+                Password: <input type="password" name="password" required /> </label>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+</body>
+
+</html>
