@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>The Best Organic Market!!</title>
+		<link rel="stylesheet" href="../css/styles.css" />
+		<link rel="stylesheet" href="../css/recipesDetail.css" />
+
+	</head>
+	<body>
+		<%- include('header') %>
+		<h2><%=title%></h2>
+		<% if (admin === 'on'){%>
+			<section class="mainContainer__admin">
+				<div>
+					<form action="" method="POST" name="recipeForm">
+						<label for="product__Title">Title:</label>
+						<input
+							id="product__Title"
+							name="updatedTitle"
+							placeholder="New title"
+							value="<%= recipe.title %>"
+							required
+						/>
+						<p>Type: <span class="type"><%= recipe.type %></span></p>
+						<label for="product__Title">Rating:</label>
+						<input
+							id="product__Rating"
+							name="updatedRating"
+							placeholder="New rating"
+							value="<%= recipe.rating %>"
+							required
+						/>
+						</br>
+						</br>
+
+						<label for="product__Description">Description:</label>
+						</br>
+						<textarea class="text-area"
+						minlength="4" maxlength="350"
+							id="product__Description"
+							name="updatedDescription"
+							placeholder="New description"
+							rows="10" cols="50"
+							value="<%= recipe.description %>"
+						><%= recipe.description %></textarea>
+
+						</br>
+						</br>
+						<p><span>Height: </span><%= recipe.height %>cm</p>
+						<p><span>Width: </span><%= recipe.width %>cm</p>
+						<label for="product__Price">Price:</label>
+						<input
+							id="product__Price"
+							name="updatedPrice"
+							placeholder="New price"
+							value="<%= recipe.price %>"
+							required
+						/>$
+					</br>
+					<p>Image by default:</p>
+					<img src='<%=recipe.filename%>' alt="<%=recipe.title%>">
+					<p>If you want to change the image you can change it by entering an url image. Please, check to enter a correct format, if you enter another format text the image product won't be available.</p>
+					<input class="largeInput"
+					id="product__Filename"
+					name="updatedFilename"
+					placeholder="New filename"
+					value="<%= recipe.filename %>"
+					required
+				/>
+					</br>
+
+
+						<button
+						type="submit"
+						>
+							Save changes
+						</button>
+					</form>
+
+				</div>
+			</section>
+		<% } else{ %>
+			<section class="mainContainer">
+				<div class="info">
+					<h3><span>Title: </span><%= recipe.title %></h3>
+					<div class="extras">
+						<p>Type: <span class="type"><%= recipe.type %></span></p>
+						<p><span>Rating: </span><%= recipe.rating %></p>
+					</div>
+					<p><span>Description: </span><%= recipe.description %></p>
+					<div class="specificDetails">
+						<p><span>Height: </span><%= recipe.height %>cm</p>
+						<p><span>Width: </span><%= recipe.width %>cm</p>
+					</div>
+
+					<p><span>Price: </span><%= recipe.price %>$</p>
+				</div>
+				<div class="photo">
+					<img src='<%=recipe.filename%>' alt="<%=recipe.title%>">
+				</div>
+			</section>
+		<%}%>
+	</body>
+</html>

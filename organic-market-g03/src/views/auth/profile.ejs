@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Profile</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/profile.css">
+</head>
+
+<body>
+	<%- include('../header')-%>
+	<h2 class="jumbotron title">Welcome <%= user.user.toUpperCase() %></h2>
+	<form action="" method="POST">
+		<div class="changePassword">
+			<label for="password" class="changePassword__lable">
+				Change your password:
+				<input type="password" name="password" value="<%= user.password %>" class="lable__input"
+					pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,12}$" required />
+			</label>
+			<button type="submit" class="changePassword__button">Save</button>
+		</div>
+		<p>The password requires:</p>
+		<ol>
+			<li>a uppercase letter</li>
+			<li>a number</li>
+			<li>one of the following symbols @ $ ! % * # ? & </li>
+		</ol>
+
+	</form>
+	</div>
+	<form action="/auth/logout" method="POST" class="logout">
+		<button type="submit" class="logout__button">Log Out</button>
+	</form>
+
+	<% if(cart.length !== 0){ %>
+	<section class="cart">
+		<h3 class="cart__title">Cart history</h3>
+		<div class="cart__main fluid-container">
+			<% cart.forEach(element => { %>
+			<div class="main__item">
+				<img src="<%= element.filename %>" alt="Product image" class="item__img">
+				<div class="item__info">
+					<h4 class="info__text">
+						<a href="/list/<%=element.title%>"><%= element.title %> </a>
+						| <%= element.price %>$ </h4>
+					<form action="/auth/removeFromCart" method="POST">
+						<button type="submit" name="toDelete" value='<%=element.title%>'>X</button>
+					</form>
+				</div>
+			</div>
+			<% }) %>
+
+		</div>
+	</section>
+	<% } %>
+
+
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+</body>
+
+</html>
