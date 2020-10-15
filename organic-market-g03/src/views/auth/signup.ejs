@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Signup </title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/recipesDetail.css">
+</head>
+
+<body>
+    <%- include('../header')-%>
+    <h2> <a href="/auth/signin">Signin</a> or <a href="/auth/signup">Signup</a> </h2>
+    <form action="" method="POST">
+        <div>
+            <label for="user">
+                User: <input type="text" name="user" required />
+            </label>
+        </div>
+        <div>
+            <label for="password">
+                Password: <input type="password" name="password"
+                    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,12}$" required /> </label>
+        </div>
+        <div>
+            <label for="confirmPassword">
+                Confirm password: <input type="password" name="confirmPassword" />
+            </label>
+            <p>The password requires:</p>
+            <ol>
+                <li>a uppercase letter</li>
+                <li>a number</li>
+                <li>one of the following symbols @ $ ! % * # ? & </li>
+            </ol>
+        </div>
+        <div class="admin">
+            <input type="checkbox" name="admin"></input> Admin
+        </div>
+        <button type="submit">Register</button>
+    </form>
+</body>
+
+</html>

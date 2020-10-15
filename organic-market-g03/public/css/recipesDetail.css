@@ -1,0 +1,117 @@
+/* HeroDetailComponent's private CSS styles */
+label {
+	display: inline-block;
+	width: 3em;
+	margin: 0.5em 0;
+	color: #607d8b;
+	font-weight: bold;
+}
+input {
+	height: 2em;
+	font-size: 1em;
+	padding-left: 0.4em;
+	margin: 0 5px;
+}
+
+.largeInput {
+	width: 80vw;
+}
+button {
+	margin-top: 20px;
+	font-family: Arial;
+	background-color: #eee;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+button:hover {
+	background-color: #cfd8dc;
+}
+button:disabled {
+	background-color: #eee;
+	color: #ccc;
+	cursor: auto;
+}
+
+.admin {
+	display: flex;
+	align-items: center;
+}
+
+.extras {
+	font-style: italic;
+}
+
+.specificDetails {
+	color: gray;
+}
+
+img {
+	margin: 10px auto;
+	width: 250px;
+	height: auto;
+	box-shadow: 0 18px 16px -16px rgb(0, 0, 0);
+}
+
+.mainContainer {
+	display: flex;
+	flex-direction: column;
+}
+.info {
+	display: flex;
+	flex-direction: column;
+}
+
+.photo {
+	display: flex;
+	flex-direction: column;
+}
+
+h2 {
+	padding: 5px;
+	margin-left: 35px;
+}
+
+.type {
+	margin-left: 15px;
+	padding: 5px 10px;
+	background-color: rgb(240, 214, 128);
+	border-radius: 15px;
+}
+
+@media (min-width: 769px) {
+	.mainContainer {
+		display: flex;
+		flex-direction: row;
+		margin: 15px;
+		border: 3px solid gray;
+		border-radius: 15px;
+		background-color: rgb(236, 237, 238);
+		box-shadow: 0 8px 6px -6px rgb(47, 47, 47);
+	}
+	.photo {
+		margin: 0 auto;
+		justify-content: center;
+		padding: 15px;
+	}
+	img {
+		width: 350px;
+	}
+	.info {
+		/* Si no es canvia centrat el titol de Organic market i la nav
+		margin: 0, 25px
+		withoud padding */
+		margin: auto;
+		padding: 25px;
+	}
+	.type {
+		display: contents;
+	}
+	/* 	.mainContainer__admin {
+		display: flex;
+		flex-direction: column;
+		padding: 10px;
+		align-items: center;
+	} */
+}
