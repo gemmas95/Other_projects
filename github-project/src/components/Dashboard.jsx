@@ -3,6 +3,7 @@ import TableList from "./TableList";
 import Spinner from "./common/Spinner";
 // import * as contributorsActions from "../redux/actions/contributorsActions";
 
+import PropTypes from "prop-types";
 import { loadContributors } from "../redux/actions/contributorsActions";
 import SearchForm from "./SearchForm";
 import "./Dashboard.scss";
@@ -69,5 +70,12 @@ function mapDispatchToProps(dispatch) {
     loadContributors: (dataRepo) => dispatch(loadContributors(dataRepo)), // loadContributors: (dataRepo) => dispatch(loadContributors(dataRepo)),
   };
 }
+
+Dashboard.propTypes = {
+  dataRepo: PropTypes.object.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  contributors: PropTypes.array.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

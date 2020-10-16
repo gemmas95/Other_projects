@@ -4,7 +4,7 @@ import Contributor from "./Contributor";
 function TableList({ contributors }) {
   return (
     <>
-      {!contributors && (
+      {contributors.length === 0 && (
         <>
           <p className="text-center m-5" data-testid="nullContributorsText">
             Please enter a repository name and his owner name to find it's

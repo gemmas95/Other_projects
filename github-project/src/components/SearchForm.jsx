@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function SearchForm(props) {
   return (
@@ -33,5 +34,13 @@ function SearchForm(props) {
     </form>
   );
 }
+
+SearchForm.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  dataRepo: PropTypes.object.isRequired,
+  ownerName: PropTypes.string.isRequired,
+  repoName: PropTypes.string.isRequired,
+};
 
 export default SearchForm;

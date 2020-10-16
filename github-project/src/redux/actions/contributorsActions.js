@@ -15,9 +15,7 @@ export function loadContributors(data) {
   // console.log("this is DISPACTH CONTRIBUTORSACTIONS", dispatch);
   return function (dispatch) {
     dispatch(loadingCall());
-    console.log("BEFORE loadContributors----.....", data);
     // dispatch(beginApiCall());
-    console.log("AFTER loadContributors----.....", data);
 
     return getContributors(data)
       .then((response) => response.json())
@@ -25,8 +23,6 @@ export function loadContributors(data) {
       .then((contributors) => {
         dispatch(loadContributorsSuccess(contributors));
         dispatch(loadingSuccess());
-
-        console.log("passing to get.....", contributors);
       })
       .catch((error) => console.log(error));
   };
