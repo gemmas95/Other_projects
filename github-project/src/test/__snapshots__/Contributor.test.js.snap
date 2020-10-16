@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contributor should match Contributor component 1`] = `
+<li
+  className="profile__card"
+>
+  <img
+    alt={14}
+    data-testid="avatar_url"
+    src="undefined"
+  />
+  <p
+    className="text-uppercase text-monospace font-weight-bold"
+    data-testid="user__login"
+  >
+    Bombasto
+  </p>
+  <p
+    data-testid="contributions"
+  >
+    Number of contributions: 
+  </p>
+  <a
+    className="btn btn-dark"
+    data-testid="html_url"
+  >
+     
+    Link to profile
+  </a>
+</li>
+`;
