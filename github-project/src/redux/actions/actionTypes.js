@@ -1,5 +1,5 @@
 export const LOAD_CONTRIBUTORS_SUCCESS = "LOAD COURSES_SUCCESS";
 
-export const BEGIN_API_CALL = "BEGIN_API_CALL";
+export const LOADING = "LOADING";
 
-export const API_CALL_ERROR = "API_CALL_ERROR";
+export const NO_LOADING = "NO_LOADING";

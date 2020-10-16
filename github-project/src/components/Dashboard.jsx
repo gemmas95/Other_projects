@@ -8,7 +8,7 @@ import "./Dashboard.scss";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-function Dashboard({ contributorsList }) {
+const Dashboard = ({ loadContributors, contributors }) => {
   // const [contributorsList, setContributorsList] = useState(null);
   const [error, setError] = useState(null);
 
@@ -19,9 +19,9 @@ function Dashboard({ contributorsList }) {
   });
 
   /*   useEffect(() => {
-    loadContributors();
+    loadContributors(dataRepo);
     console.log("use effect......");
-  }, contributorsList); */
+  }, []); */
 
   const handleChange = ({ target }) => {
     setDataRepo({
@@ -53,10 +53,10 @@ function Dashboard({ contributorsList }) {
         onChange={handleChange}
         onSubmit={handleSubmit}
       />
-      <TableList contributorsList={contributorsList} error={error} />
+      <TableList contributors={contributors} error={error} />
     </div>
   );
-}
+};
 
 function mapStateToProps(state) {
   console.log("this is STATE....", state);
@@ -65,10 +65,12 @@ function mapStateToProps(state) {
   };
 }
 
-const mapDispatchToProps = {
+function mapDispatchToProps(dispatch) {
   // console.log("this is DISPACTH", dispatch);
-
-  loadContributors,
+  debugger;
+  return {
+    loadContributors: (dataRepo) => dispatch(loadContributors(dataRepo)), // loadContributors: (dataRepo) => dispatch(loadContributors(dataRepo)),
+  };
 
   // dispatch(contributorsActions.loadContributors(data)),
   /*       loadContributors: bindActionCreators(
@@ -81,6 +83,6 @@ const mapDispatchToProps = {
 
   // loadContributors,
   //  (dataRepo) => dispatch(loadContributors(dataRepo)),
-};
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
