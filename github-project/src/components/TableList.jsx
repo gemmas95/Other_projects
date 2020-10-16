@@ -18,13 +18,6 @@ function TableList({ contributors }) {
           </p>
         </>
       )}
-      {contributors?.length === 0 && (
-        <img
-          alt="loading"
-          data-testid="isLoading"
-          src="https://trello-attachments.s3.amazonaws.com/5f7c8ab9b80a927f1f047d20/300x300/a35a54d93989cc51ca3226d2220477b3/Gif_loaging.gif"
-        ></img>
-      )}
       {contributors?.length > 0 && contributors[0].login && (
         <section>
           <p className="text-center mt-4" data-testid="contributorsLength">

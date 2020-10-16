@@ -12,11 +12,9 @@ function loadingSuccess(commons) {
 }
 
 export function loadContributors(data) {
-  debugger;
   // console.log("this is DISPACTH CONTRIBUTORSACTIONS", dispatch);
   return function (dispatch) {
-    // dispatch(loadingCall());
-    debugger;
+    dispatch(loadingCall());
     console.log("BEFORE loadContributors----.....", data);
     // dispatch(beginApiCall());
     console.log("AFTER loadContributors----.....", data);
@@ -26,7 +24,7 @@ export function loadContributors(data) {
 
       .then((contributors) => {
         dispatch(loadContributorsSuccess(contributors));
-        // dispatch(loadingSuccess());
+        dispatch(loadingSuccess());
 
         console.log("passing to get.....", contributors);
       })

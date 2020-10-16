@@ -1,3 +1,5 @@
+// Here we define the properties of our state object
 export default {
-  contributors: [],
+  contributors: null,
+  apiCallsInProgress: 0,
 };

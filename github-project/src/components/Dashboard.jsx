@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import TableList from "./TableList";
+import Spinner from "./common/Spinner";
 // import * as contributorsActions from "../redux/actions/contributorsActions";
 
 import { loadContributors } from "../redux/actions/contributorsActions";
 import SearchForm from "./SearchForm";
 import "./Dashboard.scss";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 
-const Dashboard = ({ loadContributors, contributors }) => {
-  // const [contributorsList, setContributorsList] = useState(null);
+const Dashboard = ({ loadContributors, contributors, isLoading }) => {
   const [error, setError] = useState(null);
 
   // Data, handleSubmit and handleChange that will be send to form component
@@ -17,11 +16,6 @@ const Dashboard = ({ loadContributors, contributors }) => {
     repoName: "",
     ownerName: "",
   });
-
-  /*   useEffect(() => {
-    loadContributors(dataRepo);
-    console.log("use effect......");
-  }, []); */
 
   const handleChange = ({ target }) => {
     setDataRepo({
@@ -37,11 +31,8 @@ const Dashboard = ({ loadContributors, contributors }) => {
       return false;
     } else {
       event.preventDefault();
-      // setContributorsList([]);
-      console.log("passing to dashboard....", dataRepo);
-      debugger;
       loadContributors(dataRepo);
-      // .then(setContributorsList).catch(setError);
+      // We could handle error in other ways, p.e. using <then(____).catch(____);
     }
   }
 
@@ -53,36 +44,30 @@ const Dashboard = ({ loadContributors, contributors }) => {
         onChange={handleChange}
         onSubmit={handleSubmit}
       />
-      <TableList contributors={contributors} error={error} />
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <TableList contributors={contributors} error={error} />
+      )}
     </div>
   );
 };
 
+// We will be passing via props all inside mapStateToProps and mapDispacthToProps
 function mapStateToProps(state) {
-  console.log("this is STATE....", state);
   return {
     contributors: state.contributors,
+    isLoading: state.apiCallsInProgress > 0,
   };
 }
 
+// Important dipatch the action creator you want to do, if not in the document of the action call
+// p.e. contributorsAction.js won't recognize dispacth and won't enter inside dispacth functions...
+// Also take into consideration <import { bindActionCreators } from "redux";> if necessary
 function mapDispatchToProps(dispatch) {
-  // console.log("this is DISPACTH", dispatch);
-  debugger;
   return {
     loadContributors: (dataRepo) => dispatch(loadContributors(dataRepo)), // loadContributors: (dataRepo) => dispatch(loadContributors(dataRepo)),
   };
-
-  // dispatch(contributorsActions.loadContributors(data)),
-  /*       loadContributors: bindActionCreators(
-        contributorsActions.loadContributors,
-        dispatch
-      ), */
-
-  // loadContributors: dispatch(loadContributors),
-  // loadContributors: bindActionCreators(loadContributors, dispatch),
-
-  // loadContributors,
-  //  (dataRepo) => dispatch(loadContributors(dataRepo)),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
