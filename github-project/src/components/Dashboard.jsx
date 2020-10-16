@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TableList from "./TableList";
-import { loadContributors } from "./../logic/contributorsActions";
+// import * as contributorsActions from "../redux/actions/contributorsActions";
+
+import { loadContributors } from "../redux/actions/contributorsActions";
 import SearchForm from "./SearchForm";
 import "./Dashboard.scss";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-function Dashboard() {
-  const [contributorsList, setContributorsList] = useState(null);
+function Dashboard({ contributorsList }) {
+  // const [contributorsList, setContributorsList] = useState(null);
   const [error, setError] = useState(null);
 
   // Data, handleSubmit and handleChange that will be send to form component
@@ -13,6 +17,11 @@ function Dashboard() {
     repoName: "",
     ownerName: "",
   });
+
+  /*   useEffect(() => {
+    loadContributors();
+    console.log("use effect......");
+  }, contributorsList); */
 
   const handleChange = ({ target }) => {
     setDataRepo({
@@ -28,8 +37,11 @@ function Dashboard() {
       return false;
     } else {
       event.preventDefault();
-      setContributorsList([]);
-      loadContributors(dataRepo).then(setContributorsList).catch(setError);
+      // setContributorsList([]);
+      console.log("passing to dashboard....", dataRepo);
+      debugger;
+      loadContributors(dataRepo);
+      // .then(setContributorsList).catch(setError);
     }
   }
 
@@ -46,4 +58,29 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+function mapStateToProps(state) {
+  console.log("this is STATE....", state);
+  return {
+    contributors: state.contributors,
+  };
+}
+
+const mapDispatchToProps = {
+  // console.log("this is DISPACTH", dispatch);
+
+  loadContributors,
+
+  // dispatch(contributorsActions.loadContributors(data)),
+  /*       loadContributors: bindActionCreators(
+        contributorsActions.loadContributors,
+        dispatch
+      ), */
+
+  // loadContributors: dispatch(loadContributors),
+  // loadContributors: bindActionCreators(loadContributors, dispatch),
+
+  // loadContributors,
+  //  (dataRepo) => dispatch(loadContributors(dataRepo)),
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
