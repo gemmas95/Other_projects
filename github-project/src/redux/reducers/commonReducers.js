@@ -10,6 +10,8 @@ export default function apiCallsInProgress(
       return state + 1;
     case types.NO_LOADING:
       return state - 1;
+    case types.API_CALL_ERROR:
+      return action.error;
     default:
       return state;
   }
