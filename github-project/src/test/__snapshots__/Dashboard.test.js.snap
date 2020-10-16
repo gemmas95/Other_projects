@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard should match Dashboard Component 1`] = `
+<div
+  className="container-fluid"
+>
+  <h1
+    className="jumbotron"
+  >
+    Contributors List
+  </h1>
+  <form
+    autoComplete="off"
+    className="d-flex justify-content-center col-md-4 offset-md-4 flex-column text-center"
+    data-testid="form"
+    onSubmit={[Function]}
+  >
+    <label>
+      Repository Name
+    </label>
+    <input
+      className="form-group"
+      name="repoName"
+      onChange={[Function]}
+      placeholder="Repository name"
+      value=""
+    />
+    <label>
+      Owner
+    </label>
+    <input
+      className="form-group"
+      name="ownerName"
+      onChange={[Function]}
+      placeholder="Owner name"
+      type="text"
+      value=""
+    />
+    <button
+      className="btn btn-info"
+      data-testid="button"
+      type="submit"
+    >
+      View contributors!
+    </button>
+  </form>
+  <p
+    className="text-center m-5"
+    data-testid="nullContributorsText"
+  >
+    Please enter a repository name and his owner name to find it's contributors
+  </p>
+  <p
+    className="text-center m-5"
+  >
+    <span>
+      Suggestions: skylab-bootcamp-202007 repository owned by SkylabCoders
+    </span>
+  </p>
+</div>
+`;
