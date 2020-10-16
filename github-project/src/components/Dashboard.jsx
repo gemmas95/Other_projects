@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TableList from "./TableList";
-import { loadContributors } from "./../logic/contributorsActions";
+// import * as contributorsActions from "../redux/actions/contributorsActions";
+
+import { loadContributors } from "../redux/actions/contributorsActions";
 import SearchForm from "./SearchForm";
 import "./Dashboard.scss";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-function Dashboard() {
-  const [contributorsList, setContributorsList] = useState(null);
+const Dashboard = ({ loadContributors, contributors }) => {
+  // const [contributorsList, setContributorsList] = useState(null);
   const [error, setError] = useState(null);
 
   // Data, handleSubmit and handleChange that will be send to form component
@@ -13,6 +17,11 @@ function Dashboard() {
     repoName: "",
     ownerName: "",
   });
+
+  /*   useEffect(() => {
+    loadContributors(dataRepo);
+    console.log("use effect......");
+  }, []); */
 
   const handleChange = ({ target }) => {
     setDataRepo({
@@ -28,8 +37,11 @@ function Dashboard() {
       return false;
     } else {
       event.preventDefault();
-      setContributorsList([]);
-      loadContributors(dataRepo).then(setContributorsList).catch(setError);
+      // setContributorsList([]);
+      console.log("passing to dashboard....", dataRepo);
+      debugger;
+      loadContributors(dataRepo);
+      // .then(setContributorsList).catch(setError);
     }
   }
 
@@ -41,9 +53,36 @@ function Dashboard() {
         onChange={handleChange}
         onSubmit={handleSubmit}
       />
-      <TableList contributorsList={contributorsList} error={error} />
+      <TableList contributors={contributors} error={error} />
     </div>
   );
+};
+
+function mapStateToProps(state) {
+  console.log("this is STATE....", state);
+  return {
+    contributors: state.contributors,
+  };
 }
 
-export default Dashboard;
+function mapDispatchToProps(dispatch) {
+  // console.log("this is DISPACTH", dispatch);
+  debugger;
+  return {
+    loadContributors: (dataRepo) => dispatch(loadContributors(dataRepo)), // loadContributors: (dataRepo) => dispatch(loadContributors(dataRepo)),
+  };
+
+  // dispatch(contributorsActions.loadContributors(data)),
+  /*       loadContributors: bindActionCreators(
+        contributorsActions.loadContributors,
+        dispatch
+      ), */
+
+  // loadContributors: dispatch(loadContributors),
+  // loadContributors: bindActionCreators(loadContributors, dispatch),
+
+  // loadContributors,
+  //  (dataRepo) => dispatch(loadContributors(dataRepo)),
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
