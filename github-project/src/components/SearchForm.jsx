@@ -39,8 +39,8 @@ SearchForm.propTypes = {
   onChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   dataRepo: PropTypes.object.isRequired,
-  ownerName: PropTypes.string.isRequired,
-  repoName: PropTypes.string.isRequired,
+  ownerName: PropTypes.string,
+  repoName: PropTypes.string,
 };
 
 export default SearchForm;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./Contributor.scss";
 
 // To render contributors change user.name for user.login change the commented loadContributors in logic/contributorsActions
@@ -26,4 +27,10 @@ function Contributor({ user }) {
     </li>
   );
 }
+
+Contributor.propTypes = {
+  user: PropTypes.object.isRequired,
+  contributions: PropTypes.number,
+};
+
 export default Contributor;

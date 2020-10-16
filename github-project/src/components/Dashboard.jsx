@@ -10,8 +10,6 @@ import "./Dashboard.scss";
 import { connect } from "react-redux";
 
 const Dashboard = ({ loadContributors, contributors, isLoading }) => {
-  const [error, setError] = useState(null);
-
   // Data, handleSubmit and handleChange that will be send to form component
   const [dataRepo, setDataRepo] = useState({
     repoName: "",
@@ -45,11 +43,7 @@ const Dashboard = ({ loadContributors, contributors, isLoading }) => {
         onChange={handleChange}
         onSubmit={handleSubmit}
       />
-      {isLoading ? (
-        <Spinner />
-      ) : (
-        <TableList contributors={contributors} error={error} />
-      )}
+      {isLoading ? <Spinner /> : <TableList contributors={contributors} />}
     </div>
   );
 };
@@ -72,10 +66,10 @@ function mapDispatchToProps(dispatch) {
 }
 
 Dashboard.propTypes = {
-  dataRepo: PropTypes.object.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func,
   isLoading: PropTypes.bool.isRequired,
-  contributors: PropTypes.array.isRequired,
+  contributors: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+    .isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
