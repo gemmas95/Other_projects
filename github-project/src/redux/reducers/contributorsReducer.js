@@ -9,7 +9,6 @@ export default function contributorsReducer(
     "this is state after initial state----contributors.js.....",
     state
   );
-  debugger;
   switch (action.type) {
     case types.LOAD_CONTRIBUTORS_SUCCESS:
       return action.contributors;

@@ -4,7 +4,7 @@ import Contributor from "./Contributor";
 function TableList({ contributors }) {
   return (
     <>
-      {!contributors && (
+      {contributors.length === 0 && (
         <>
           <p className="text-center m-5" data-testid="nullContributorsText">
             Please enter a repository name and his owner name to find it's
@@ -17,13 +17,6 @@ function TableList({ contributors }) {
             </span>
           </p>
         </>
-      )}
-      {contributors?.length === 0 && (
-        <img
-          alt="loading"
-          data-testid="isLoading"
-          src="https://trello-attachments.s3.amazonaws.com/5f7c8ab9b80a927f1f047d20/300x300/a35a54d93989cc51ca3226d2220477b3/Gif_loaging.gif"
-        ></img>
       )}
       {contributors?.length > 0 && contributors[0].login && (
         <section>
