@@ -62,3 +62,15 @@ export function sortByLessContributions(contributors) {
         : state.contributors,
   }; */
 }
+
+export function sortByMoreContributions(contributors) {
+  console.log("ai que LLEGAAAA ....", contributors);
+
+  return function (dispatch) {
+    dispatch({
+      type: types.FILTER_CONTRIBUTORS_BY_ASCENDING_CONTRIBUTIONS,
+      contributors,
+    });
+    console.log("ai pollito....", contributors);
+  };
+}

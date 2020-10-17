@@ -1,6 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { sortByLessContributions } from "../../redux/actions/contributorsActions";
+import {
+  sortByLessContributions,
+  sortByMoreContributions,
+} from "../../redux/actions/contributorsActions";
 
 function HeaderMain(props) {
   console.log("this is props...", props);
@@ -15,7 +18,14 @@ function HeaderMain(props) {
       >
         Nombre ascendente
       </button>
-      <button>Nombre descendente</button>
+      <button
+        onClick={(event) => {
+          event.preventDefault();
+          props.sortByMoreContributions(props.contributors);
+        }}
+      >
+        Nombre descendente
+      </button>
       <button>Menos contribuciones</button>
       <button>Más contribuciones</button>
     </div>
@@ -32,6 +42,8 @@ function mapDispatchToProps(dispatch) {
   return {
     sortByLessContributions: (contrib) =>
       dispatch(sortByLessContributions(contrib)),
+    sortByMoreContributions: (contrib) =>
+      dispatch(sortByMoreContributions(contrib)),
   };
 }
 

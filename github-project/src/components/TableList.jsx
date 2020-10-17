@@ -2,17 +2,18 @@ import React from "react";
 import { useState } from "react";
 import HeaderMain from "./common/HeaderMain";
 import Contributor from "./Contributor";
+import { connect } from "react-redux";
 
-function TableList({ contributors }) {
-  const [updateContributors] = useState(contributors);
-  console.log("THIS IS CONTRIBUTORS", contributors);
+function TableList(props) {
+  const { contributors } = props;
+
   return (
     <>
-      {updateContributors.length === 0 && (
+      {contributors.length === 0 && (
         <>
           <p className="text-center m-5" data-testid="nullContributorsText">
             Please enter a repository name and his owner name to find it's
-            updateContributors
+            contributors
           </p>
           <p className="text-center m-5">
             <span>
@@ -22,29 +23,35 @@ function TableList({ contributors }) {
           </p>
         </>
       )}
-      {updateContributors?.length > 0 && updateContributors[0].login && (
+      {contributors?.length > 0 && contributors[0].login && (
         <section>
-          <p
-            className="text-center mt-4"
-            data-testid="updateContributorsLength"
-          >
-            This repository has {updateContributors.length} contributor/s!
+          <p className="text-center mt-4" data-testid="contributorsLength">
+            This repository has {contributors.length} contributor/s!
           </p>
-          <HeaderMain contributors={updateContributors} />
+          <HeaderMain contributors={contributors} />
           <ul className="card-deck flex-wrap cards__container">
-            {updateContributors?.map((user) => (
+            {contributors?.map((user) => (
               <Contributor user={user} key={user.id} />
             ))}
           </ul>
         </section>
       )}
-      {updateContributors?.message && (
+      {contributors?.message && (
         <p data-testid="error" className="text-center m-5 alert alert-danger">
-          Error: {updateContributors.message}
+          Error: {contributors.message}
         </p>
       )}
     </>
   );
 }
 
-export default TableList;
+// Here mapStateToProps allow us to be alert what is contributors and update it when the state change
+// This allows us not to depend of passing the data to fathers and childrens, only watch the state and if it change, it updates here
+
+function mapStateToProps(state) {
+  return {
+    contributors: state.contributors,
+  };
+}
+
+export default connect(mapStateToProps)(TableList);
