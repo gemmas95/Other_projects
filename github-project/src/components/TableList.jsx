@@ -1,7 +1,9 @@
 import React from "react";
+import HeaderMain from "./common/HeaderMain";
 import Contributor from "./Contributor";
 
 function TableList({ contributors }) {
+  console.log("THIS IS CONTRIBUTORS", contributors);
   return (
     <>
       {contributors.length === 0 && (
@@ -23,6 +25,7 @@ function TableList({ contributors }) {
           <p className="text-center mt-4" data-testid="contributorsLength">
             This repository has {contributors.length} contributor/s!
           </p>
+          <HeaderMain contributors={contributors} />
           <ul className="card-deck flex-wrap cards__container">
             {contributors?.map((user) => (
               <Contributor user={user} key={user.id} />

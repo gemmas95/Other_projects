@@ -25,3 +25,15 @@
   background-color: white;
   padding: 4px;
 }
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: bisque;
+  padding: 20px 90px;
+  margin: auto 3em;
+}
+.flex-row > p {
+  margin: 0px;
+}

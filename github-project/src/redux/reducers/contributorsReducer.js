@@ -12,6 +12,8 @@ export default function contributorsReducer(
   switch (action.type) {
     case types.LOAD_CONTRIBUTORS_SUCCESS:
       return action.contributors;
+    case types.FILTER_CONTRIBUTORS_BY_DESCENDING_CONTRIBUTIONS:
+      return { ...state, filteredItems: action.contributors };
     default:
       return state;
   }

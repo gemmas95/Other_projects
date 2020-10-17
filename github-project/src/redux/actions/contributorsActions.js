@@ -32,3 +32,17 @@ export function loadContributors(data) {
       });
   };
 }
+
+export function sortByLessContributions(contributors) {
+  return function (dispatch) {
+    dispatch({
+      type: types.FILTER_CONTRIBUTORS_BY_DESCENDING_CONTRIBUTIONS,
+      contributors: contributors
+        .map((contrib) => {
+          return contrib.contributions;
+        })
+        .sort(),
+    });
+    console.log("ai pollito....", contributors);
+  };
+}
