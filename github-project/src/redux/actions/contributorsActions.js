@@ -38,7 +38,7 @@ export function sortByLessContributions(contributors) {
 
   return function (dispatch) {
     dispatch({
-      type: types.FILTER_CONTRIBUTORS_BY_DESCENDING_CONTRIBUTIONS,
+      type: types.FILTER_CONTRIBUTORS_BY_LESS_CONTRIBUTIONS,
       contributors,
       /*       contributors: [
         ...contributors.sort((a, b) => {
@@ -64,13 +64,28 @@ export function sortByLessContributions(contributors) {
 }
 
 export function sortByMoreContributions(contributors) {
-  console.log("ai que LLEGAAAA ....", contributors);
-
   return function (dispatch) {
     dispatch({
-      type: types.FILTER_CONTRIBUTORS_BY_ASCENDING_CONTRIBUTIONS,
+      type: types.FILTER_CONTRIBUTORS_BY_MORE_CONTRIBUTIONS,
       contributors,
     });
-    console.log("ai pollito....", contributors);
+  };
+}
+
+export function sortByNameAscending(contributors) {
+  return function (dispatch) {
+    dispatch({
+      type: types.FILTER_CONTRIBUTORS_BY_ASCENDING_NAME,
+      contributors,
+    });
+  };
+}
+
+export function sortByNameDescending(contributors) {
+  return function (dispatch) {
+    dispatch({
+      type: types.FILTER_CONTRIBUTORS_BY_DESCENDING_NAME,
+      contributors,
+    });
   };
 }
