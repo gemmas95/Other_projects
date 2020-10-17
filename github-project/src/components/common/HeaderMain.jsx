@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import {
   sortByLessContributions,
   sortByMoreContributions,
+  sortByNameAscending,
+  sortByNameDescending,
 } from "../../redux/actions/contributorsActions";
 
 function HeaderMain(props) {
@@ -13,7 +15,7 @@ function HeaderMain(props) {
       <button
         onClick={(event) => {
           event.preventDefault();
-          props.sortByLessContributions(props.contributors);
+          props.sortByNameAscending(props.contributors);
         }}
       >
         Nombre ascendente
@@ -21,13 +23,27 @@ function HeaderMain(props) {
       <button
         onClick={(event) => {
           event.preventDefault();
-          props.sortByMoreContributions(props.contributors);
+          props.sortByNameDescending(props.contributors);
         }}
       >
         Nombre descendente
       </button>
-      <button>Menos contribuciones</button>
-      <button>Más contribuciones</button>
+      <button
+        onClick={(event) => {
+          event.preventDefault();
+          props.sortByLessContributions(props.contributors);
+        }}
+      >
+        Menos contribuciones
+      </button>
+      <button
+        onClick={(event) => {
+          event.preventDefault();
+          props.sortByMoreContributions(props.contributors);
+        }}
+      >
+        Más contribuciones
+      </button>
     </div>
   );
 }
@@ -44,6 +60,8 @@ function mapDispatchToProps(dispatch) {
       dispatch(sortByLessContributions(contrib)),
     sortByMoreContributions: (contrib) =>
       dispatch(sortByMoreContributions(contrib)),
+    sortByNameAscending: (contrib) => dispatch(sortByNameAscending(contrib)),
+    sortByNameDescending: (contrib) => dispatch(sortByNameDescending(contrib)),
   };
 }
 

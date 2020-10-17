@@ -11,7 +11,7 @@ import { connect } from "react-redux";
 
 const Dashboard = (props) => {
   const { loadContributors, isLoading } = props;
-  console.log("this is props", props);
+
   // Data, handleSubmit and handleChange that will be send to form component
   const [dataRepo, setDataRepo] = useState({
     repoName: "",
@@ -39,7 +39,10 @@ const Dashboard = (props) => {
 
   return (
     <div className="container-fluid">
-      <h1 className="jumbotron">Contributors List</h1>
+      <div className="jumbotron">
+        <h1>Github Contributors List with Redux</h1>
+        <h3>By Gemma Sanz</h3>
+      </div>
       <SearchForm
         dataRepo={dataRepo}
         onChange={handleChange}
