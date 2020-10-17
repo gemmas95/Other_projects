@@ -1,7 +1,12 @@
 import React from "react";
+import { useState } from "react";
+import HeaderMain from "./common/HeaderMain";
 import Contributor from "./Contributor";
+import { connect } from "react-redux";
 
-function TableList({ contributors }) {
+function TableList(props) {
+  const { contributors } = props;
+
   return (
     <>
       {contributors.length === 0 && (
@@ -23,6 +28,7 @@ function TableList({ contributors }) {
           <p className="text-center mt-4" data-testid="contributorsLength">
             This repository has {contributors.length} contributor/s!
           </p>
+          <HeaderMain contributors={contributors} />
           <ul className="card-deck flex-wrap cards__container">
             {contributors?.map((user) => (
               <Contributor user={user} key={user.id} />
@@ -39,4 +45,13 @@ function TableList({ contributors }) {
   );
 }
 
-export default TableList;
+// Here mapStateToProps allow us to be alert what is contributors and update it when the state change
+// This allows us not to depend of passing the data to fathers and childrens, only watch the state and if it change, it updates here
+
+function mapStateToProps(state) {
+  return {
+    contributors: state.contributors,
+  };
+}
+
+export default connect(mapStateToProps)(TableList);

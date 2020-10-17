@@ -9,7 +9,9 @@ import SearchForm from "./SearchForm";
 import "./Dashboard.scss";
 import { connect } from "react-redux";
 
-const Dashboard = ({ loadContributors, contributors, isLoading }) => {
+const Dashboard = (props) => {
+  const { loadContributors, isLoading } = props;
+  console.log("this is props", props);
   // Data, handleSubmit and handleChange that will be send to form component
   const [dataRepo, setDataRepo] = useState({
     repoName: "",
@@ -43,7 +45,7 @@ const Dashboard = ({ loadContributors, contributors, isLoading }) => {
         onChange={handleChange}
         onSubmit={handleSubmit}
       />
-      {isLoading ? <Spinner /> : <TableList contributors={contributors} />}
+      {isLoading ? <Spinner /> : <TableList />}
     </div>
   );
 };
@@ -68,8 +70,6 @@ function mapDispatchToProps(dispatch) {
 Dashboard.propTypes = {
   handleSubmit: PropTypes.func,
   isLoading: PropTypes.bool.isRequired,
-  contributors: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
-    .isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

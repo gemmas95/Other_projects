@@ -32,3 +32,45 @@ export function loadContributors(data) {
       });
   };
 }
+
+export function sortByLessContributions(contributors) {
+  console.log("ai que LLEGAAAA ....", contributors);
+
+  return function (dispatch) {
+    dispatch({
+      type: types.FILTER_CONTRIBUTORS_BY_DESCENDING_CONTRIBUTIONS,
+      contributors,
+      /*       contributors: [
+        ...contributors.sort((a, b) => {
+          console.log("this is a", a, "and this is b", b);
+          return a.contributions - b.contributions;
+        }),
+      ], */
+    });
+    console.log("ai pollito....", contributors);
+  };
+
+  /*  return {
+    ...state,
+    contributors:
+      state.contributors.length > 0
+        ? [
+            ...state.contributors.sort(
+              (a, b) => a.contributions - b.contributions
+            ),
+          ]
+        : state.contributors,
+  }; */
+}
+
+export function sortByMoreContributions(contributors) {
+  console.log("ai que LLEGAAAA ....", contributors);
+
+  return function (dispatch) {
+    dispatch({
+      type: types.FILTER_CONTRIBUTORS_BY_ASCENDING_CONTRIBUTIONS,
+      contributors,
+    });
+    console.log("ai pollito....", contributors);
+  };
+}
