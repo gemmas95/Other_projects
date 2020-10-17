@@ -34,14 +34,17 @@ export function loadContributors(data) {
 }
 
 export function sortByLessContributions(contributors) {
+  console.log("ai que LLEGAAAA ....", contributors);
+
   return function (dispatch) {
     dispatch({
       type: types.FILTER_CONTRIBUTORS_BY_DESCENDING_CONTRIBUTIONS,
-      contributors: contributors
-        .map((contrib) => {
-          return contrib.contributions;
-        })
-        .sort(),
+      contributors: [
+        ...contributors.sort((a, b) => {
+          console.log("this is a", a, "and this is b", b);
+          return a.contributions - b.contributions;
+        }),
+      ],
     });
     console.log("ai pollito....", contributors);
   };

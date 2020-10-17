@@ -1,16 +1,18 @@
 import React from "react";
+import { useState } from "react";
 import HeaderMain from "./common/HeaderMain";
 import Contributor from "./Contributor";
 
 function TableList({ contributors }) {
+  const [updateContributors] = useState(contributors);
   console.log("THIS IS CONTRIBUTORS", contributors);
   return (
     <>
-      {contributors.length === 0 && (
+      {updateContributors.length === 0 && (
         <>
           <p className="text-center m-5" data-testid="nullContributorsText">
             Please enter a repository name and his owner name to find it's
-            contributors
+            updateContributors
           </p>
           <p className="text-center m-5">
             <span>
@@ -20,22 +22,25 @@ function TableList({ contributors }) {
           </p>
         </>
       )}
-      {contributors?.length > 0 && contributors[0].login && (
+      {updateContributors?.length > 0 && updateContributors[0].login && (
         <section>
-          <p className="text-center mt-4" data-testid="contributorsLength">
-            This repository has {contributors.length} contributor/s!
+          <p
+            className="text-center mt-4"
+            data-testid="updateContributorsLength"
+          >
+            This repository has {updateContributors.length} contributor/s!
           </p>
-          <HeaderMain contributors={contributors} />
+          <HeaderMain contributors={updateContributors} />
           <ul className="card-deck flex-wrap cards__container">
-            {contributors?.map((user) => (
+            {updateContributors?.map((user) => (
               <Contributor user={user} key={user.id} />
             ))}
           </ul>
         </section>
       )}
-      {contributors?.message && (
+      {updateContributors?.message && (
         <p data-testid="error" className="text-center m-5 alert alert-danger">
-          Error: {contributors.message}
+          Error: {updateContributors.message}
         </p>
       )}
     </>

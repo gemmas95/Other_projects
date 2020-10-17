@@ -24,7 +24,7 @@ function HeaderMain(props) {
 
 function mapStateToProps(state) {
   return {
-    contributorsFiltered: state.contributors,
+    contributors: state.contributors,
   };
 }
 
