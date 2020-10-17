@@ -13,7 +13,13 @@ export default function contributorsReducer(
     case types.LOAD_CONTRIBUTORS_SUCCESS:
       return action.contributors;
     case types.FILTER_CONTRIBUTORS_BY_DESCENDING_CONTRIBUTIONS:
-      return { ...state, filteredItems: action.contributors };
+      console.log("this is state", state);
+      return {
+        ...state,
+        contributors: [
+          ...state.sort((a, b) => a.contributions - b.contributions),
+        ],
+      };
     default:
       return state;
   }

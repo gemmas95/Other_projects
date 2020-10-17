@@ -39,13 +39,26 @@ export function sortByLessContributions(contributors) {
   return function (dispatch) {
     dispatch({
       type: types.FILTER_CONTRIBUTORS_BY_DESCENDING_CONTRIBUTIONS,
-      contributors: [
+      contributors,
+      /*       contributors: [
         ...contributors.sort((a, b) => {
           console.log("this is a", a, "and this is b", b);
           return a.contributions - b.contributions;
         }),
-      ],
+      ], */
     });
     console.log("ai pollito....", contributors);
   };
+
+  /*  return {
+    ...state,
+    contributors:
+      state.contributors.length > 0
+        ? [
+            ...state.contributors.sort(
+              (a, b) => a.contributions - b.contributions
+            ),
+          ]
+        : state.contributors,
+  }; */
 }
