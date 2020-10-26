@@ -6,6 +6,7 @@ import {
   sortByNameAscending,
   sortByNameDescending,
 } from "../../redux/actions/contributorsActions";
+import "./HeaderMain.scss";
 
 function HeaderMain(props) {
   console.log("this is props...", props);
@@ -13,6 +14,7 @@ function HeaderMain(props) {
     <div className="flex-row">
       <p>Ordenar por:</p>
       <button
+        className="btn btn-outline-primary"
         onClick={(event) => {
           event.preventDefault();
           props.sortByNameAscending(props.contributors);
@@ -21,6 +23,7 @@ function HeaderMain(props) {
         Nombre ascendente
       </button>
       <button
+        className="btn-warning"
         onClick={(event) => {
           event.preventDefault();
           props.sortByNameDescending(props.contributors);
