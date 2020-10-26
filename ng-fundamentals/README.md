@@ -1,6 +1,7 @@
 # NgFundamentals
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
+This project was made following the Pluralsight course: <a href='https://app.pluralsight.com/library/courses/angular-fundamentals/table-of-contents'>Angular Fundamentals</a>.
 
 ## Development server
 
