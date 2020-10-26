@@ -14,7 +14,7 @@ function HeaderMain(props) {
     <div className="flex-row">
       <p>Ordenar por:</p>
       <button
-        className=" btn btn-default"
+        className="btn btn-default btn-sm"
         onClick={(event) => {
           event.preventDefault();
           props.sortByNameAscending(props.contributors);
@@ -23,7 +23,7 @@ function HeaderMain(props) {
         Nombre ascendente
       </button>
       <button
-        className=" btn btn-default"
+        className="btn btn-default btn-sm"
         onClick={(event) => {
           event.preventDefault();
           props.sortByNameDescending(props.contributors);
@@ -32,7 +32,7 @@ function HeaderMain(props) {
         Nombre descendente
       </button>
       <button
-        className=" btn btn-default"
+        className="btn btn-default btn-sm"
         onClick={(event) => {
           event.preventDefault();
           props.sortByLessContributions(props.contributors);
@@ -41,7 +41,7 @@ function HeaderMain(props) {
         Menos contribuciones
       </button>
       <button
-        className=" btn btn-default"
+        className="btn btn-default btn-sm"
         onClick={(event) => {
           event.preventDefault();
           props.sortByMoreContributions(props.contributors);
