@@ -6,3 +6,4 @@ export * from './event.service';
 export * from './event-details/index';
 export * from './shared/index';
 export * from './location-validator.directive';
+export * from './event-resolver.service';
