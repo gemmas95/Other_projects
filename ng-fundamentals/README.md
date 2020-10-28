@@ -5,7 +5,7 @@ This project was made following the Pluralsight course: <a href='https://app.plu
 
 ## Set up
 
-Run `ng server` to run backend. And then `ng start` to run the frontend. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm run server` to run backend. And then `npm start` to run the frontend. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 Run `ng test` to execute the unit tests.
 
