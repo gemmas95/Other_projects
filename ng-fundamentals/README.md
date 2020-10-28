@@ -3,26 +3,33 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
 This project was made following the Pluralsight course: <a href='https://app.pluralsight.com/library/courses/angular-fundamentals/table-of-contents'>Angular Fundamentals</a>.
 
-## Development server
+## Set up
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng server` to run backend. And then `ng start` to run the frontend. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Run `ng test` to execute the unit tests.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng e2e` to execute the end-to-end.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Documentation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Angular
 
-## Running end-to-end tests
+- <a href="https://angular.io/tutorial">Tutorials Angular </a>
+- <a href="https://angular.io/guide/observables">Observables</a>
+- <a href="https://angular.io/api/forms/Validators">Validators</a>
+- <a href="https://angular.io/guide/observables">Observables</a>
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### TypeScript
 
-## Further help
+- <a href="https://www.typescriptlang.org/docs">TypeScript Documentation (Interfaces, Enum,...)</a>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Other courses
+
+- <a href='https://app.pluralsight.com/library/courses/angular-fundamentals/table-of-contents'>Angular Fundamentals Pluralsight</a>
+- <a href="https://app.pluralsight.com/library/courses/angular-2-getting-started-update/table-of-contents">Angular Getting Started Pluralsight (\$)</a>
+- <a href="https://www.youtube.com/playlist?list=PLezsbUDiwcplWsiTJ9-bVayqNCqRAtQ2g">Curso Básico Angular</a>
