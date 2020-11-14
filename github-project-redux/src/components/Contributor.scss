@@ -29,6 +29,7 @@
 .flex-row {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   background-color: #17a2b866;
   padding: 20px 90px;
