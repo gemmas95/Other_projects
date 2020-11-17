@@ -1,16 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Footer from "./Footer";
 import Header from "./Header";
-import { getProducts } from "./services/productService";
+import Spinner from "./Spinner";
+import useFetch from "./services/useFetch";
 
 export default function App() {
   const [size, setSize] = useState("");
-  const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    getProducts("shoes").then((response) => setProducts(response));
-  }, []);
+  const { data: products, loading, error } = useFetch(
+    "products?category=shoes"
+  );
+
+  /* WITH THEN AND CATCH:
+     useEffect(() => {
+    getProducts("shoes")
+      .then((response) => setProducts(response))
+      .catch((err) => setError(err))
+      .finally(() => setLoading(false));
+  }, []); */
 
   function renderProduct(p) {
     return (
@@ -27,7 +35,8 @@ export default function App() {
   const filteredProducts = size
     ? products.filter((p) => p.skus.find((s) => s.size === +size))
     : products;
-
+  if (error) throw error;
+  if (loading) return <Spinner />;
   return (
     <>
       <div className="content">
