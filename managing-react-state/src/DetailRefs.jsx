@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import PageNotFound from "./PageNotFound";
 import useFetch from "./services/useFetch";
 import Spinner from "./Spinner";
-import { useCart } from "./cartContext";
 
-export default function Detail() {
-  const { dispatch } = useCart();
+export default function Detail(props) {
   const { id } = useParams();
+  const skuRef = useRef();
   const navigate = useNavigate();
-  const [sku, setSku] = useState("");
 
   const { data: product, loading, error } = useFetch(`products/${id}`);
 
@@ -22,7 +20,7 @@ export default function Detail() {
       <h1>{product.name}</h1>
       <p>{product.description}</p>
       <p id="price">${product.price}</p>
-      <select id="size" value={sku} onChange={(e) => setSku(e.target.value)}>
+      <select id="size" ref={skuRef}>
         <option value="">What size?</option>
         {product.skus.map((productSku) => {
           return (
@@ -36,9 +34,10 @@ export default function Detail() {
       <p>
         <button
           className="btn btn-primary"
-          disabled={!sku}
           onClick={() => {
-            dispatch({ type: "add", id, sku });
+            const sku = skuRef.current.value; //The current property references to the HTML element
+            if (!sku) return alert("Select size.");
+            props.addToCart(id, sku);
             navigate("/cart");
           }}
         >
