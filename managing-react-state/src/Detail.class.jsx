@@ -53,7 +53,7 @@ class Detail extends React.Component {
                         disabled={!sku}
                         className="btn btn-primary"
                         onClick={() => {
-                          this.context.dispatch({ type: "add", id, sku });
+                          dispatch({ type: "add", id, sku });
                           navigate("/cart");
                         }}
                       >
