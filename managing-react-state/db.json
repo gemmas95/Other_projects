@@ -1,0 +1,174 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "category": "shoes",
+      "image": "shoe1.jpg",
+      "name": "Hiker",
+      "price": 94.95,
+      "skus": [
+        {
+          "sku": "17",
+          "size": 7
+        },
+        {
+          "sku": "18",
+          "size": 8
+        }
+      ],
+      "description": "This rugged boot will get you up the mountain safely."
+    },
+    {
+      "id": 2,
+      "category": "shoes",
+      "image": "shoe2.jpg",
+      "name": "Climber",
+      "price": 78.99,
+      "skus": [
+        {
+          "sku": "28",
+          "size": 8
+        },
+        {
+          "sku": "29",
+          "size": 9
+        }
+      ],
+      "description": "Sure-footed traction in slippery conditions."
+    },
+    {
+      "id": 3,
+      "category": "shoes",
+      "image": "shoe3.jpg",
+      "name": "Explorer",
+      "price": 145.95,
+      "skus": [
+        {
+          "sku": "37",
+          "size": 7
+        },
+        {
+          "sku": "38",
+          "size": 8
+        },
+        {
+          "sku": "39",
+          "size": 9
+        }
+      ],
+      "description": "Look stylish while stomping in the mud."
+    }
+  ],
+  "shippingAddress": [
+    {
+      "id": 1,
+      "city": "",
+      "country": ""
+    },
+    {
+      "city": "",
+      "country": "",
+      "id": 2
+    },
+    {
+      "city": "",
+      "country": "",
+      "id": 3
+    },
+    {
+      "city": "",
+      "country": "",
+      "id": 4
+    },
+    {
+      "city": "",
+      "country": "",
+      "id": 5
+    },
+    {
+      "city": "",
+      "country": "",
+      "id": 6
+    },
+    {
+      "city": "",
+      "country": "",
+      "id": 7
+    },
+    {
+      "city": "",
+      "country": "",
+      "id": 8
+    },
+    {
+      "city": "",
+      "country": "",
+      "id": 9
+    },
+    {
+      "city": "d",
+      "country": "China",
+      "id": 10
+    },
+    {
+      "city": "s",
+      "country": "India",
+      "id": 11
+    },
+    {
+      "city": "w",
+      "country": "China",
+      "id": 12
+    },
+    {
+      "city": "sds",
+      "country": "India",
+      "id": 13
+    },
+    {
+      "city": "sds",
+      "country": "India",
+      "id": 14
+    },
+    {
+      "city": "sds",
+      "country": "India",
+      "id": 15
+    },
+    {
+      "city": "sds",
+      "country": "India",
+      "id": 16
+    },
+    {
+      "city": "sds",
+      "country": "India",
+      "id": 17
+    },
+    {
+      "city": "asas",
+      "country": "United Kingdom",
+      "id": 18
+    },
+    {
+      "city": "asas",
+      "country": "United Kingdom",
+      "id": 19
+    },
+    {
+      "city": "asas",
+      "country": "United Kingdom",
+      "id": 20
+    },
+    {
+      "city": "Sabadell",
+      "country": "China",
+      "id": 21
+    },
+    {
+      "city": "sa",
+      "country": "India",
+      "id": 22
+    }
+  ]
+}
