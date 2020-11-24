@@ -1,12 +1,19 @@
 const express = require("express");
 const debug = require("debug")("app");
-
-// This allows express to understand graphql implemented as a middleware
+const mongoose = require("mongoose");
+require("dotenv").config(); // This allows express to understand graphql implemented as a middleware
 const { graphqlHTTP } = require("express-graphql");
-
 const schema = require("./schema/schema");
 
 const app = express();
+
+mongoose.connect(process.env.MONGO, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+});
+mongoose.connection.once("open", () => {
+  debug(`Connected to database!`);
+});
 
 const PORT = 9000;
 
