@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
+
 const { Schema } = mongoose;
 
 const bookSchema = new Schema({
-  name: String,
-  genre: String,
-  authorId: Schema.Types.ObjectId,
+  name: { type: String, required: true },
+  genre: { type: String, required: true },
+  authorId: { type: Schema.Types.ObjectId, required: true },
 });
 
 // The collections name it's going to be Book, this collection will have inside a bookSchema

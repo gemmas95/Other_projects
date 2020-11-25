@@ -1,5 +1,8 @@
+/* eslint-disable prefer-const */
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-unused-vars */
 const graphql = require("graphql");
-const _ = require("lodash");
+// const _ = require("lodash");
 const Book = require("../models/bookModel");
 const Author = require("../models/authorModel");
 
@@ -11,6 +14,7 @@ const {
   GraphQLID,
   GraphQLInt,
   GraphQLList,
+  GraphQLNonNull,
 } = graphql;
 
 // Schemas
@@ -42,7 +46,6 @@ const AuthorType = new GraphQLObjectType({
       type: new GraphQLList(BookType),
       resolve(parent, args) {
         // return _.filter(books, { authorId: parent.id });
-        console.log(Book);
         return Book.find({ authorId: parent.id });
       },
     },
@@ -95,8 +98,8 @@ const Mutation = new GraphQLObjectType({
     addAuthor: {
       type: AuthorType,
       args: {
-        name: { type: GraphQLString },
-        age: { type: GraphQLInt },
+        name: { type: new GraphQLNonNull(GraphQLString) },
+        age: { type: new GraphQLNonNull(GraphQLInt) },
       },
       resolve(parent, args) {
         // We use the Author model to create a new one
@@ -111,9 +114,10 @@ const Mutation = new GraphQLObjectType({
     addBook: {
       type: BookType,
       args: {
-        name: { type: GraphQLString },
-        genre: { type: GraphQLString },
-        authorId: { type: GraphQLID },
+        // This do makes required this field
+        name: { type: new GraphQLNonNull(GraphQLString) },
+        genre: { type: new GraphQLNonNull(GraphQLString) },
+        authorId: { type: new GraphQLNonNull(GraphQLID) },
       },
       resolve(parent, args) {
         let book = new Book({

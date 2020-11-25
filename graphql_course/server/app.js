@@ -3,10 +3,15 @@ const debug = require("debug")("app");
 const mongoose = require("mongoose");
 require("dotenv").config(); // This allows express to understand graphql implemented as a middleware
 const { graphqlHTTP } = require("express-graphql");
+const cors = require("cors");
 const schema = require("./schema/schema");
 
 const app = express();
 
+// allow cross.origin requests
+app.use(cors());
+
+// connected to database
 mongoose.connect(process.env.MONGO, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
