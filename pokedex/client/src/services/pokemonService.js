@@ -1,5 +1,5 @@
-export async function getPokemons() {
-  const response = await fetch(`/pokemons?page=2&limit=10`);
+export async function getPokemons(page) {
+  const response = await fetch(`/pokemons?page=${page || 1}&limit=10`);
   if (response.ok) {
     const json = await response.json();
     return json;
