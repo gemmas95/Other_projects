@@ -32,7 +32,9 @@ const Dashboard = (props) => {
       return false;
     } else {
       event.preventDefault();
-      loadContributors(dataRepo);
+      loadContributors(dataRepo).catch((error) => {
+        alert("Loading contributors failed" + error);
+      });
       // We could handle error in other ways, p.e. using <then(____).catch(____);
     }
   }
