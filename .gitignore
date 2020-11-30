@@ -13,6 +13,9 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 /building-apps-react-redux
 /logic_exercises
 
+#node_modules
+*/node_modules
+
 # Runtime data
 pids
 *.pid
