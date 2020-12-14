@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination should match snapshot without data 1`] = `
+<nav>
+  <ul
+    className="paginationList"
+  />
+</nav>
+`;

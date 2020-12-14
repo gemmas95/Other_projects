@@ -1,0 +1,39 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form button {
+  align-self: center;
+}
+
+form p:first-child {
+  border: 1px solid black;
+  padding: 25px 10px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #f3f3f3;
+  margin: 20px;
+  line-height: 1.4em;
+}
+
+form span {
+  font-style: oblique;
+  margin: 5px 0px;
+}
+
+input,
+textarea,
+select,
+label {
+  margin: 5px 5px 5px 5px;
+  font-size: 16px;
+  padding: 5px;
+}
+
+textarea {
+  max-width: -webkit-fill-available;
+  min-height: 100px;
+  max-height: 300px;
+  margin-bottom: 20px;
+}

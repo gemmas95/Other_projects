@@ -1,0 +1,569 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DocumentForm should match snapshot with saving false 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <form
+        autocomplete="off"
+      >
+        <p>
+          If you choose 
+          <strong>
+            simple type
+          </strong>
+           of document even though you select an image or text, it will only be displayed the title and date.
+           
+          <br />
+          For 
+          <strong>
+            custom type
+          </strong>
+           will be displayed text too. 
+          <br />
+          And for the 
+          <strong>
+            advanced type
+          </strong>
+           all items will be displayed.
+        </p>
+        <label
+          for="title"
+        >
+          Title
+        </label>
+        <input
+          id="title"
+          maxlength="80"
+          name="title"
+          required=""
+          type="text"
+        />
+        <label
+          for="type"
+        >
+          Type
+        </label>
+        <select
+          id="type"
+          name="type"
+          required=""
+        >
+          <option
+            value=""
+          >
+            Choose a type
+          </option>
+          <option
+            value="simple"
+          >
+            Simple
+          </option>
+          <option
+            value="custom"
+          >
+            Custom
+          </option>
+          <option
+            value="advanced"
+          >
+            Advanced
+          </option>
+        </select>
+        <label
+          for="date"
+        >
+          Date
+        </label>
+        <input
+          id="date"
+          name="date"
+          required=""
+          type="date"
+        />
+        <label
+          for="text"
+        >
+          Text
+        </label>
+        <textarea
+          id="text"
+          name="text"
+        />
+        <label
+          for="image"
+        >
+          Image
+        </label>
+        <input
+          id="image"
+          name="image"
+          type="text"
+        />
+        <p>
+          The format of the image must be an url ending with a proper image extension(p.e: .jpeg, .jpg, gif,...) 
+          <br />
+          <span>
+            (example: https://mimusica.es/wp-content/uploads/2019/10/musica-chillout.jpg)
+          </span>
+        </p>
+        <button
+          class="greenButton"
+          type="submit"
+        >
+          Create course
+        </button>
+      </form>
+    </div>
+  </body>,
+  "container": <div>
+    <form
+      autocomplete="off"
+    >
+      <p>
+        If you choose 
+        <strong>
+          simple type
+        </strong>
+         of document even though you select an image or text, it will only be displayed the title and date.
+         
+        <br />
+        For 
+        <strong>
+          custom type
+        </strong>
+         will be displayed text too. 
+        <br />
+        And for the 
+        <strong>
+          advanced type
+        </strong>
+         all items will be displayed.
+      </p>
+      <label
+        for="title"
+      >
+        Title
+      </label>
+      <input
+        id="title"
+        maxlength="80"
+        name="title"
+        required=""
+        type="text"
+      />
+      <label
+        for="type"
+      >
+        Type
+      </label>
+      <select
+        id="type"
+        name="type"
+        required=""
+      >
+        <option
+          value=""
+        >
+          Choose a type
+        </option>
+        <option
+          value="simple"
+        >
+          Simple
+        </option>
+        <option
+          value="custom"
+        >
+          Custom
+        </option>
+        <option
+          value="advanced"
+        >
+          Advanced
+        </option>
+      </select>
+      <label
+        for="date"
+      >
+        Date
+      </label>
+      <input
+        id="date"
+        name="date"
+        required=""
+        type="date"
+      />
+      <label
+        for="text"
+      >
+        Text
+      </label>
+      <textarea
+        id="text"
+        name="text"
+      />
+      <label
+        for="image"
+      >
+        Image
+      </label>
+      <input
+        id="image"
+        name="image"
+        type="text"
+      />
+      <p>
+        The format of the image must be an url ending with a proper image extension(p.e: .jpeg, .jpg, gif,...) 
+        <br />
+        <span>
+          (example: https://mimusica.es/wp-content/uploads/2019/10/musica-chillout.jpg)
+        </span>
+      </p>
+      <button
+        class="greenButton"
+        type="submit"
+      >
+        Create course
+      </button>
+    </form>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`DocumentForm should match snapshot with saving true 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <form
+        autocomplete="off"
+      >
+        <p>
+          If you choose 
+          <strong>
+            simple type
+          </strong>
+           of document even though you select an image or text, it will only be displayed the title and date.
+           
+          <br />
+          For 
+          <strong>
+            custom type
+          </strong>
+           will be displayed text too. 
+          <br />
+          And for the 
+          <strong>
+            advanced type
+          </strong>
+           all items will be displayed.
+        </p>
+        <label
+          for="title"
+        >
+          Title
+        </label>
+        <input
+          id="title"
+          maxlength="80"
+          name="title"
+          required=""
+          type="text"
+        />
+        <label
+          for="type"
+        >
+          Type
+        </label>
+        <select
+          id="type"
+          name="type"
+          required=""
+        >
+          <option
+            value=""
+          >
+            Choose a type
+          </option>
+          <option
+            value="simple"
+          >
+            Simple
+          </option>
+          <option
+            value="custom"
+          >
+            Custom
+          </option>
+          <option
+            value="advanced"
+          >
+            Advanced
+          </option>
+        </select>
+        <label
+          for="date"
+        >
+          Date
+        </label>
+        <input
+          id="date"
+          name="date"
+          required=""
+          type="date"
+        />
+        <label
+          for="text"
+        >
+          Text
+        </label>
+        <textarea
+          id="text"
+          name="text"
+        />
+        <label
+          for="image"
+        >
+          Image
+        </label>
+        <input
+          id="image"
+          name="image"
+          type="text"
+        />
+        <p>
+          The format of the image must be an url ending with a proper image extension(p.e: .jpeg, .jpg, gif,...) 
+          <br />
+          <span>
+            (example: https://mimusica.es/wp-content/uploads/2019/10/musica-chillout.jpg)
+          </span>
+        </p>
+        <button
+          class="greenButton"
+          disabled=""
+          type="submit"
+        >
+          Saving...
+        </button>
+      </form>
+    </div>
+  </body>,
+  "container": <div>
+    <form
+      autocomplete="off"
+    >
+      <p>
+        If you choose 
+        <strong>
+          simple type
+        </strong>
+         of document even though you select an image or text, it will only be displayed the title and date.
+         
+        <br />
+        For 
+        <strong>
+          custom type
+        </strong>
+         will be displayed text too. 
+        <br />
+        And for the 
+        <strong>
+          advanced type
+        </strong>
+         all items will be displayed.
+      </p>
+      <label
+        for="title"
+      >
+        Title
+      </label>
+      <input
+        id="title"
+        maxlength="80"
+        name="title"
+        required=""
+        type="text"
+      />
+      <label
+        for="type"
+      >
+        Type
+      </label>
+      <select
+        id="type"
+        name="type"
+        required=""
+      >
+        <option
+          value=""
+        >
+          Choose a type
+        </option>
+        <option
+          value="simple"
+        >
+          Simple
+        </option>
+        <option
+          value="custom"
+        >
+          Custom
+        </option>
+        <option
+          value="advanced"
+        >
+          Advanced
+        </option>
+      </select>
+      <label
+        for="date"
+      >
+        Date
+      </label>
+      <input
+        id="date"
+        name="date"
+        required=""
+        type="date"
+      />
+      <label
+        for="text"
+      >
+        Text
+      </label>
+      <textarea
+        id="text"
+        name="text"
+      />
+      <label
+        for="image"
+      >
+        Image
+      </label>
+      <input
+        id="image"
+        name="image"
+        type="text"
+      />
+      <p>
+        The format of the image must be an url ending with a proper image extension(p.e: .jpeg, .jpg, gif,...) 
+        <br />
+        <span>
+          (example: https://mimusica.es/wp-content/uploads/2019/10/musica-chillout.jpg)
+        </span>
+      </p>
+      <button
+        class="greenButton"
+        disabled=""
+        type="submit"
+      >
+        Saving...
+      </button>
+    </form>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

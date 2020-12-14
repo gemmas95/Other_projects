@@ -1,0 +1,37 @@
+.paginationList {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.paginationList > li button {
+  border: 1px solid #dee2e6;
+  margin: 5px;
+  color: #39dc73;
+  font-weight: bold;
+}
+
+.paginationList > li a,
+.paginationList > li button {
+  /* padding: 15px 20px; */
+  padding: 7px 13px;
+  cursor: pointer;
+  font-size: 17px;
+}
+.paginationList button:hover {
+  color: white;
+  background-color: #39dc73;
+}
+.paginationList button:focus {
+  z-index: 2;
+  outline: 0;
+  background-color: #39dc73;
+  color: white;
+  box-shadow: 0 0 0 0.2rem rgba(35, 77, 87, 0.2);
+}
+
+.paginationList > li:focus {
+  color: white;
+  background-color: purple;
+}

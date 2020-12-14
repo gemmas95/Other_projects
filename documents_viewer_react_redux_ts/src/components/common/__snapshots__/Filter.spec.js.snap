@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter should match snapshot 1`] = `
+Array [
+  <div
+    className="sc-bdfBwQ cquHKG"
+  >
+    <p>
+      1
+       documents found
+    </p>
+    <label>
+      Filter by
+      <select
+        data-testid="select"
+        onChange={[Function]}
+      >
+        <option
+          value=""
+        >
+          All
+        </option>
+        <option
+          value="simple"
+        >
+          Simple
+        </option>
+        <option
+          value="custom"
+        >
+          Custom
+        </option>
+        <option
+          value="advanced"
+        >
+          Advanced
+        </option>
+      </select>
+    </label>
+  </div>,
+  " ",
+]
+`;
