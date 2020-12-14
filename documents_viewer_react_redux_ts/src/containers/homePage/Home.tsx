@@ -5,8 +5,10 @@ const Home: React.FC = () => {
     <>
       <h1>Welcome to Documents viewer!</h1>
       <p>
-        This applications is made for Signaturit Jr Frontend Developer job
-        application.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam
+        mollitia quaerat tenetur ratione numquam, accusantium nam eveniet sed
+        dolore voluptate nulla, consectetur quidem ducimus ea unde beatae
+        facilis perferendis excepturi!
       </p>
     </>
   );
