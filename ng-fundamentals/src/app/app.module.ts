@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+// Http call
+import { HttpClientModule } from '@angular/common/http';
 
 // Components
 import {
@@ -17,14 +21,13 @@ import {
 import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './nav/navbar.component';
 import { Error404Component } from './errors/404.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //Services
 import {
   EventService,
-  EventRouteActivator,
   EventListResolver,
   VoterService,
+  EventResolver,
 } from './events/index';
 import {
   JQ_TOKEN,
@@ -68,6 +71,7 @@ let jQuery = window['$'];
     RouterModule.forRoot(appRoutes),
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
 
   // Services
@@ -76,7 +80,7 @@ let jQuery = window['$'];
     { provide: TOASTER_TOKEN, useValue: toastr },
     { provide: JQ_TOKEN, useValue: jQuery },
 
-    EventRouteActivator,
+    EventResolver,
     EventListResolver,
     VoterService,
     AuthService,

@@ -27,7 +27,7 @@ export function loadContributors(data) {
       })
       .catch((error) => {
         dispatch(apiCallError(error));
-        console.log(error);
+        console.error(error);
         throw error;
       });
   };
